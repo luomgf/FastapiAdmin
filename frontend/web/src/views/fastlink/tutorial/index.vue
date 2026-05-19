@@ -58,7 +58,7 @@
                     <ElButton
                       link
                       type="primary"
-                      class="manual-nav__mod-title !h-auto min-h-0 justify-start px-0 py-1"
+                      class="manual-nav__mod-title h-auto! min-h-0 justify-start px-0 py-1"
                       @click="scrollToAnchor(mod.anchor)"
                     >
                       {{ mod.title }}
@@ -69,7 +69,7 @@
                         :key="p.anchor"
                         link
                         size="small"
-                        class="manual-nav__page !h-auto min-h-0 justify-start px-2 py-1"
+                        class="manual-nav__page h-auto! min-h-0 justify-start px-2 py-1"
                         @click="scrollToAnchor(p.anchor)"
                       >
                         {{ p.title }}
@@ -103,279 +103,277 @@
                       </template>
                       <ul>
                         <li>
-                          <ElLink href="#mod-system" type="primary" :underline="false">
+                          <ElLink href="#mod-system" type="primary" underline="never">
                             一、系统管理
                           </ElLink>
                           <div class="toc-l2">
-                            <ElLink href="#page-user" type="primary" :underline="false">
+                            <ElLink href="#page-user" type="primary" underline="never">
                               用户管理
                             </ElLink>
                             ·
-                            <ElLink href="#page-role" type="primary" :underline="false">
+                            <ElLink href="#page-role" type="primary" underline="never">
                               角色管理
                             </ElLink>
                             ·
-                            <ElLink href="#page-menu" type="primary" :underline="false">
+                            <ElLink href="#page-menu" type="primary" underline="never">
                               菜单管理
                             </ElLink>
                             ·
-                            <ElLink href="#page-dept" type="primary" :underline="false">
+                            <ElLink href="#page-dept" type="primary" underline="never">
                               部门管理
                             </ElLink>
                             ·
-                            <ElLink href="#page-position" type="primary" :underline="false">
+                            <ElLink href="#page-position" type="primary" underline="never">
                               岗位管理
                             </ElLink>
                             ·
-                            <ElLink href="#page-dict" type="primary" :underline="false">
+                            <ElLink href="#page-dict" type="primary" underline="never">
                               字典管理
                             </ElLink>
                             ·
-                            <ElLink href="#page-param" type="primary" :underline="false">
+                            <ElLink href="#page-param" type="primary" underline="never">
                               参数配置
                             </ElLink>
                             ·
-                            <ElLink href="#page-notice" type="primary" :underline="false">
+                            <ElLink href="#page-notice" type="primary" underline="never">
                               通知公告
                             </ElLink>
                             ·
-                            <ElLink href="#page-tenant" type="primary" :underline="false">
+                            <ElLink href="#page-tenant" type="primary" underline="never">
                               租户管理
                             </ElLink>
                             ·
-                            <ElLink href="#page-log" type="primary" :underline="false">
+                            <ElLink href="#page-log" type="primary" underline="never">
                               操作日志
                             </ElLink>
                             ·
-                            <ElLink href="#page-login" type="primary" :underline="false">
+                            <ElLink href="#page-login" type="primary" underline="never">
                               登录页
                             </ElLink>
                           </div>
                         </li>
                         <li>
-                          <ElLink href="#mod-monitor" type="primary" :underline="false">
+                          <ElLink href="#mod-monitor" type="primary" underline="never">
                             二、监控管理
                           </ElLink>
                           <div class="toc-l2">
-                            <ElLink href="#page-online" type="primary" :underline="false">
+                            <ElLink href="#page-online" type="primary" underline="never">
                               在线用户
                             </ElLink>
                             ·
-                            <ElLink href="#page-cache" type="primary" :underline="false">
+                            <ElLink href="#page-cache" type="primary" underline="never">
                               缓存管理
                             </ElLink>
                             ·
-                            <ElLink href="#page-resource" type="primary" :underline="false">
+                            <ElLink href="#page-resource" type="primary" underline="never">
                               文件管理
                             </ElLink>
                             ·
-                            <ElLink href="#page-server" type="primary" :underline="false">
+                            <ElLink href="#page-server" type="primary" underline="never">
                               服务监控
                             </ElLink>
                           </div>
                         </li>
                         <li>
-                          <ElLink href="#mod-task" type="primary" :underline="false">
+                          <ElLink href="#mod-task" type="primary" underline="never">
                             三、任务管理
                           </ElLink>
                           <div class="toc-l2">
-                            <ElLink href="#page-cronjob" type="primary" :underline="false">
+                            <ElLink href="#page-cronjob" type="primary" underline="never">
                               调度器监控
                             </ElLink>
                             ·
-                            <ElLink href="#page-cronnode" type="primary" :underline="false">
+                            <ElLink href="#page-cronnode" type="primary" underline="never">
                               节点管理
                             </ElLink>
                             ·
-                            <ElLink href="#page-workflow" type="primary" :underline="false">
+                            <ElLink href="#page-workflow" type="primary" underline="never">
                               流程编排
                             </ElLink>
                             ·
-                            <ElLink href="#page-nodetype" type="primary" :underline="false">
+                            <ElLink href="#page-nodetype" type="primary" underline="never">
                               编排节点类型
                             </ElLink>
                           </div>
                         </li>
                         <li>
-                          <ElLink href="#mod-ai" type="primary" :underline="false">
+                          <ElLink href="#mod-ai" type="primary" underline="never">
                             四、AI 模块
                           </ElLink>
                           <div class="toc-l2">
-                            <ElLink href="#page-ai-chat" type="primary" :underline="false">
+                            <ElLink href="#page-ai-chat" type="primary" underline="never">
                               AI智能助手
                             </ElLink>
                             ·
-                            <ElLink href="#page-ai-fachat" type="primary" :underline="false">
+                            <ElLink href="#page-ai-fachat" type="primary" underline="never">
                               会话聊天
                             </ElLink>
                             ·
-                            <ElLink href="#page-ai-memory" type="primary" :underline="false">
+                            <ElLink href="#page-ai-memory" type="primary" underline="never">
                               会话记忆
                             </ElLink>
                           </div>
                         </li>
                         <li>
-                          <ElLink href="#mod-generator" type="primary" :underline="false">
+                          <ElLink href="#mod-generator" type="primary" underline="never">
                             五、代码生成器
                           </ElLink>
                           <div class="toc-l2">
-                            <ElLink href="#page-gencode" type="primary" :underline="false">
+                            <ElLink href="#page-gencode" type="primary" underline="never">
                               代码生成
                             </ElLink>
                           </div>
                         </li>
                         <li>
-                          <ElLink href="#mod-app" type="primary" :underline="false">
+                          <ElLink href="#mod-app" type="primary" underline="never">
                             六、应用管理
                           </ElLink>
                           <div class="toc-l2">
-                            <ElLink href="#page-portal" type="primary" :underline="false">
+                            <ElLink href="#page-portal" type="primary" underline="never">
                               插件市场
                             </ElLink>
                           </div>
                         </li>
                         <li>
-                          <ElLink href="#mod-example" type="primary" :underline="false">
+                          <ElLink href="#mod-example" type="primary" underline="never">
                             七、示例模块
                           </ElLink>
                           <div class="toc-l2">
-                            <ElLink href="#page-demo" type="primary" :underline="false">
+                            <ElLink href="#page-demo" type="primary" underline="never">
                               示例管理
                             </ElLink>
                             ·
-                            <ElLink href="#page-demo01" type="primary" :underline="false">
+                            <ElLink href="#page-demo01" type="primary" underline="never">
                               三级菜单
                             </ElLink>
                           </div>
                         </li>
                         <li>
-                          <ElLink href="#mod-dashboard" type="primary" :underline="false">
+                          <ElLink href="#mod-dashboard" type="primary" underline="never">
                             八、仪表盘
                           </ElLink>
                           <div class="toc-l2">
-                            <ElLink href="#page-home" type="primary" :underline="false">
-                              首页
-                            </ElLink>
+                            <ElLink href="#page-home" type="primary" underline="never">首页</ElLink>
                             ·
-                            <ElLink href="#page-profile" type="primary" :underline="false">
+                            <ElLink href="#page-profile" type="primary" underline="never">
                               个人中心
                             </ElLink>
                             ·
-                            <ElLink href="#page-changelog" type="primary" :underline="false">
+                            <ElLink href="#page-changelog" type="primary" underline="never">
                               更新日志
                             </ElLink>
                             ·
-                            <ElLink href="#page-db-workplace" type="primary" :underline="false">
+                            <ElLink href="#page-db-workplace" type="primary" underline="never">
                               工作台
                             </ElLink>
                             ·
-                            <ElLink href="#page-db-console" type="primary" :underline="false">
+                            <ElLink href="#page-db-console" type="primary" underline="never">
                               控制台
                             </ElLink>
                             ·
-                            <ElLink href="#page-db-analysis" type="primary" :underline="false">
+                            <ElLink href="#page-db-analysis" type="primary" underline="never">
                               分析页
                             </ElLink>
                             ·
-                            <ElLink href="#page-db-ecommerce" type="primary" :underline="false">
+                            <ElLink href="#page-db-ecommerce" type="primary" underline="never">
                               电子商务
                             </ElLink>
                             ·
-                            <ElLink href="#page-db-map" type="primary" :underline="false">
+                            <ElLink href="#page-db-map" type="primary" underline="never">
                               地图
                             </ElLink>
                             ·
-                            <ElLink href="#page-db-pricing" type="primary" :underline="false">
+                            <ElLink href="#page-db-pricing" type="primary" underline="never">
                               定价
                             </ElLink>
                             ·
-                            <ElLink href="#page-db-article" type="primary" :underline="false">
+                            <ElLink href="#page-db-article" type="primary" underline="never">
                               文章管理
                             </ElLink>
                             ·
-                            <ElLink href="#page-db-tutorial" type="primary" :underline="false">
+                            <ElLink href="#page-db-tutorial" type="primary" underline="never">
                               教程
                             </ElLink>
                           </div>
                         </li>
                         <li>
-                          <ElLink href="#mod-layout" type="primary" :underline="false">
+                          <ElLink href="#mod-layout" type="primary" underline="never">
                             九、布局与通用功能
                           </ElLink>
                           <div class="toc-l2">
-                            <ElLink href="#layout-main" type="primary" :underline="false">
+                            <ElLink href="#layout-main" type="primary" underline="never">
                               主布局
                             </ElLink>
                             ·
-                            <ElLink href="#layout-sidebar" type="primary" :underline="false">
+                            <ElLink href="#layout-sidebar" type="primary" underline="never">
                               侧栏菜单
                             </ElLink>
                             ·
-                            <ElLink href="#layout-header" type="primary" :underline="false">
+                            <ElLink href="#layout-header" type="primary" underline="never">
                               顶栏
                             </ElLink>
                             ·
-                            <ElLink href="#layout-worktab" type="primary" :underline="false">
+                            <ElLink href="#layout-worktab" type="primary" underline="never">
                               标签页
                             </ElLink>
                             ·
-                            <ElLink href="#layout-settings" type="primary" :underline="false">
+                            <ElLink href="#layout-settings" type="primary" underline="never">
                               设置面板
                             </ElLink>
                             ·
-                            <ElLink href="#layout-notification" type="primary" :underline="false">
+                            <ElLink href="#layout-notification" type="primary" underline="never">
                               通知
                             </ElLink>
                             ·
-                            <ElLink href="#layout-search" type="primary" :underline="false">
+                            <ElLink href="#layout-search" type="primary" underline="never">
                               全局搜索
                             </ElLink>
                             ·
-                            <ElLink href="#layout-lock" type="primary" :underline="false">
+                            <ElLink href="#layout-lock" type="primary" underline="never">
                               锁屏
                             </ElLink>
                             ·
-                            <ElLink href="#layout-user" type="primary" :underline="false">
+                            <ElLink href="#layout-user" type="primary" underline="never">
                               用户菜单
                             </ElLink>
                             ·
-                            <ElLink href="#layout-theme" type="primary" :underline="false">
+                            <ElLink href="#layout-theme" type="primary" underline="never">
                               主题切换
                             </ElLink>
                             ·
-                            <ElLink href="#layout-lang" type="primary" :underline="false">
+                            <ElLink href="#layout-lang" type="primary" underline="never">
                               语言切换
                             </ElLink>
                           </div>
                         </li>
                         <li>
-                          <ElLink href="#mod-exception" type="primary" :underline="false">
+                          <ElLink href="#mod-exception" type="primary" underline="never">
                             十、异常页
                           </ElLink>
                           <div class="toc-l2">
-                            <ElLink href="#page-401" type="primary" :underline="false">401</ElLink>
+                            <ElLink href="#page-401" type="primary" underline="never">401</ElLink>
                             ·
-                            <ElLink href="#page-403" type="primary" :underline="false">403</ElLink>
+                            <ElLink href="#page-403" type="primary" underline="never">403</ElLink>
                             ·
-                            <ElLink href="#page-404" type="primary" :underline="false">404</ElLink>
+                            <ElLink href="#page-404" type="primary" underline="never">404</ElLink>
                             ·
-                            <ElLink href="#page-500" type="primary" :underline="false">500</ElLink>
+                            <ElLink href="#page-500" type="primary" underline="never">500</ElLink>
                           </div>
                         </li>
                         <li>
-                          <ElLink href="#mod-swagger" type="primary" :underline="false">
+                          <ElLink href="#mod-swagger" type="primary" underline="never">
                             十一、接口文档（API）
                           </ElLink>
                           <div class="toc-l2">
-                            <ElLink href="#page-swagger" type="primary" :underline="false">
+                            <ElLink href="#page-swagger" type="primary" underline="never">
                               Swagger文档
                             </ElLink>
                             ·
-                            <ElLink href="#page-redoc" type="primary" :underline="false">
+                            <ElLink href="#page-redoc" type="primary" underline="never">
                               Redoc文档
                             </ElLink>
                             ·
-                            <ElLink href="#page-ljdoc" type="primary" :underline="false">
+                            <ElLink href="#page-ljdoc" type="primary" underline="never">
                               LangJin文档
                             </ElLink>
                           </div>
@@ -402,7 +400,7 @@
                         </h3>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">API 权限标识</ElDivider>
+                          <ElDivider content-position="left" class="my-3!">API 权限标识</ElDivider>
                           <p>
                             <ElTag effect="plain" type="info" size="small" class="mr-1 font-mono">
                               module_system:user
@@ -433,44 +431,68 @@
                         </div>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">
+                          <ElDivider content-position="left" class="my-3!">
                             🔍 搜索/筛选表单（5字段）
                           </ElDivider>
                           <ElCard shadow="never" class="mb-3 overflow-x-auto">
                             <table class="manual-doc-table w-full border-collapse text-sm">
                               <thead>
-                                <tr><th>备注</th></tr>
+                                <tr>
+                                  <th>备注</th>
+                                </tr>
                               </thead>
                               <tbody>
-                                <tr><td>文本·账号</td></tr>
-                                <tr><td>文本·用户名</td></tr>
-                                <tr><td>下拉·启用/停用</td></tr>
-                                <tr><td>创建人（UserTableSelect 弹窗选用户）</td></tr>
-                                <tr><td>创建时间·日期时间范围</td></tr>
+                                <tr>
+                                  <td>文本·账号</td>
+                                </tr>
+                                <tr>
+                                  <td>文本·用户名</td>
+                                </tr>
+                                <tr>
+                                  <td>下拉·启用/停用</td>
+                                </tr>
+                                <tr>
+                                  <td>创建人（FaUserTableSelect 弹窗选用户）</td>
+                                </tr>
+                                <tr>
+                                  <td>创建时间·日期时间范围</td>
+                                </tr>
                               </tbody>
                             </table>
                           </ElCard>
                         </div>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">📊 表格列</ElDivider>
+                          <ElDivider content-position="left" class="my-3!">📊 表格列</ElDivider>
                           <ElCard shadow="never" class="mb-3 overflow-x-auto">
                             <table class="manual-doc-table w-full border-collapse text-sm">
                               <thead>
-                                <tr><th>渲染</th></tr>
+                                <tr>
+                                  <th>渲染</th>
+                                </tr>
                               </thead>
                               <tbody>
-                                <tr><td>固定左侧</td></tr>
-                                <tr><td>ElAvatar</td></tr>
-                                <tr><td>溢出省略</td></tr>
-                                <tr><td>溢出省略</td></tr>
+                                <tr>
+                                  <td>固定左侧</td>
+                                </tr>
+                                <tr>
+                                  <td>ElAvatar</td>
+                                </tr>
+                                <tr>
+                                  <td>溢出省略</td>
+                                </tr>
+                                <tr>
+                                  <td>溢出省略</td>
+                                </tr>
                                 <tr>
                                   <td>
                                     <span class="tag tag-success">启用</span>
                                     <span class="tag tag-danger">停用</span>
                                   </td>
                                 </tr>
-                                <tr><td>row.dept?.name</td></tr>
+                                <tr>
+                                  <td>row.dept?.name</td>
+                                </tr>
                                 <tr>
                                   <td>
                                     <span class="tag tag-success">男</span>
@@ -478,16 +500,22 @@
                                     <span class="tag tag-info">未知</span>
                                   </td>
                                 </tr>
-                                <tr><td></td></tr>
-                                <tr><td></td></tr>
-                                <tr><td>固定右侧</td></tr>
+                                <tr>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <td>固定右侧</td>
+                                </tr>
                               </tbody>
                             </table>
                           </ElCard>
                         </div>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">🔘 工具栏按钮</ElDivider>
+                          <ElDivider content-position="left" class="my-3!">🔘 工具栏按钮</ElDivider>
                           <ElSpace wrap size="small" class="mb-2">
                             <ElButton type="primary" size="small" plain class="manual-doc-btn">
                               新增
@@ -510,7 +538,7 @@
                         </div>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">🔘 行操作按钮</ElDivider>
+                          <ElDivider content-position="left" class="my-3!">🔘 行操作按钮</ElDivider>
                           <ElSpace wrap size="small" class="mb-2">
                             <ElButton type="warning" size="small" plain class="manual-doc-btn">
                               重置密码
@@ -528,7 +556,7 @@
                         </div>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">📋 弹窗/抽屉</ElDivider>
+                          <ElDivider content-position="left" class="my-3!">📋 弹窗/抽屉</ElDivider>
                           <ul class="feature-list">
                             <li>
                               <strong>详情 Drawer</strong>
@@ -556,7 +584,7 @@
                         </div>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">✨ 特殊功能</ElDivider>
+                          <ElDivider content-position="left" class="my-3!">✨ 特殊功能</ElDivider>
                           <ul class="feature-list">
                             <li>左侧部门树联动筛选(点击树节点过滤列表)</li>
                             <li>批量删除(确认对话框)</li>
@@ -576,7 +604,7 @@
                         </h3>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">API 权限标识</ElDivider>
+                          <ElDivider content-position="left" class="my-3!">API 权限标识</ElDivider>
                           <p>
                             <ElTag effect="plain" type="info" size="small" class="mr-1 font-mono">
                               module_system:role
@@ -607,48 +635,66 @@
                         </div>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">
+                          <ElDivider content-position="left" class="my-3!">
                             🔍 搜索表单（3字段）
                           </ElDivider>
                           <ElCard shadow="never" class="mb-3 overflow-x-auto">
                             <table class="manual-doc-table w-full border-collapse text-sm">
                               <thead>
-                                <tr><th>类型</th></tr>
+                                <tr>
+                                  <th>类型</th>
+                                </tr>
                               </thead>
                               <tbody>
-                                <tr><td>文本输入</td></tr>
-                                <tr><td>下拉(启用/停用, value="true"/"false")</td></tr>
-                                <tr><td>日期时间范围</td></tr>
+                                <tr>
+                                  <td>文本输入</td>
+                                </tr>
+                                <tr>
+                                  <td>下拉(启用/停用, value="true"/"false")</td>
+                                </tr>
+                                <tr>
+                                  <td>日期时间范围</td>
+                                </tr>
                               </tbody>
                             </table>
                           </ElCard>
                         </div>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">📊 表格列</ElDivider>
+                          <ElDivider content-position="left" class="my-3!">📊 表格列</ElDivider>
                           <ElCard shadow="never" class="mb-3 overflow-x-auto">
                             <table class="manual-doc-table w-full border-collapse text-sm">
                               <thead>
-                                <tr><th>渲染</th></tr>
+                                <tr>
+                                  <th>渲染</th>
+                                </tr>
                               </thead>
                               <tbody>
-                                <tr><td>固定左侧</td></tr>
-                                <tr><td>溢出省略</td></tr>
+                                <tr>
+                                  <td>固定左侧</td>
+                                </tr>
+                                <tr>
+                                  <td>溢出省略</td>
+                                </tr>
                                 <tr>
                                   <td>
                                     <span class="tag tag-success">启用</span>
                                     <span class="tag tag-danger">停用</span>
                                   </td>
                                 </tr>
-                                <tr><td>溢出省略</td></tr>
-                                <tr><td>固定右侧</td></tr>
+                                <tr>
+                                  <td>溢出省略</td>
+                                </tr>
+                                <tr>
+                                  <td>固定右侧</td>
+                                </tr>
                               </tbody>
                             </table>
                           </ElCard>
                         </div>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">🔘 工具栏按钮</ElDivider>
+                          <ElDivider content-position="left" class="my-3!">🔘 工具栏按钮</ElDivider>
                           <ElSpace wrap size="small" class="mb-2">
                             <ElButton type="primary" size="small" plain class="manual-doc-btn">
                               新增
@@ -665,7 +711,7 @@
                         </div>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">🔘 行操作按钮</ElDivider>
+                          <ElDivider content-position="left" class="my-3!">🔘 行操作按钮</ElDivider>
                           <ElSpace wrap size="small" class="mb-2">
                             <ElButton type="info" size="small" plain class="manual-doc-btn">
                               权限
@@ -680,7 +726,7 @@
                         </div>
 
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">📋 弹窗/抽屉</ElDivider>
+                          <ElDivider content-position="left" class="my-3!">📋 弹窗/抽屉</ElDivider>
                           <ul class="feature-list">
                             <li>
                               <strong>新增/编辑 Drawer</strong>
@@ -713,7 +759,7 @@
                           </ElText>
                         </h3>
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">
+                          <ElDivider content-position="left" class="my-3!">
                             功能完整性验收
                           </ElDivider>
                           <ul class="feature-list">
@@ -750,7 +796,7 @@
                           </ElText>
                         </h3>
                         <div class="section">
-                          <ElDivider content-position="left" class="!my-3">
+                          <ElDivider content-position="left" class="my-3!">
                             功能完整性验收
                           </ElDivider>
                           <ul class="feature-list">

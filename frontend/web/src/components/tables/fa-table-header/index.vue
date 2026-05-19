@@ -1,11 +1,11 @@
 <!-- 表格头部，包含表格大小、刷新、全屏、列设置、其他设置 -->
 <template>
-  <div class="flex-cb max-md:!block" id="fa-table-header">
+  <div class="flex-cb max-md:block!" id="fa-table-header">
     <div class="flex-wrap">
       <slot name="left"></slot>
     </div>
 
-    <div class="flex-c md:justify-end max-md:mt-3 max-sm:!hidden">
+    <div class="flex-c md:justify-end max-md:mt-3 max-sm:hidden!">
       <!-- 搜索区域显示/隐藏：默认展示搜索（未高亮）；点按收起后高亮表示当前为隐藏状态 -->
       <ElTooltip
         v-if="showSearchBar != null"
@@ -15,7 +15,7 @@
         <div
           class="button"
           @click="search"
-          :class="!showSearchBar ? 'active !bg-theme hover:!bg-theme/80' : ''"
+          :class="!showSearchBar ? 'active bg-theme! hover:bg-theme/80!' : ''"
         >
           <FaSvgIcon icon="ri:search-line" :class="!showSearchBar ? 'text-white' : 'text-g-700'" />
         </div>
@@ -44,12 +44,12 @@
             <div
               v-for="item in tableSizeOptions"
               :key="item.value"
-              class="table-size-btn-item [&_.el-dropdown-menu__item]:!mb-[3px] last:[&_.el-dropdown-menu__item]:!mb-0"
+              class="table-size-btn-item [&_.el-dropdown-menu__item]:mb-[3px]! last:[&_.el-dropdown-menu__item]:mb-0!"
             >
               <ElDropdownItem
                 :key="item.value"
                 :command="item.value"
-                :class="tableSize === item.value ? '!bg-g-300/55' : ''"
+                :class="tableSize === item.value ? 'bg-g-300/55!' : ''"
               >
                 {{ item.label }}
               </ElDropdownItem>
@@ -72,7 +72,7 @@
         <div
           class="button"
           @click="toggleRowDrag"
-          :class="isRowDrag ? 'active !bg-theme hover:!bg-theme/80' : ''"
+          :class="isRowDrag ? 'active bg-theme! hover:bg-theme/80!' : ''"
         >
           <FaSvgIcon icon="ri:drag-move-line" :class="isRowDrag ? 'text-white' : 'text-g-700'" />
         </div>
@@ -153,7 +153,7 @@
 import { computed, ref, onMounted, onUnmounted } from "vue";
 import { storeToRefs } from "pinia";
 import { TableSizeEnum } from "@/enums/formEnum";
-import { useTableStore } from "@stores/modules/table.store";
+import { useTableStore } from "@stores";
 import { VueDraggable } from "vue-draggable-plus";
 import { useI18n } from "vue-i18n";
 import type { ColumnOption } from "@/types/component";
@@ -182,7 +182,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  fullClass: "fa-table-card",
+  fullClass: "fa-full-height",
   layout: "search,refresh,size,fullscreen,columns,rowDrag,settings",
   showSearchBar: undefined,
 });
@@ -294,28 +294,11 @@ const isFullScreen = ref(false);
 const originalOverflow = ref("");
 
 /**
- * 查找可全屏的容器元素
- * 优先取 .fa-table-card 的父级（包含搜索栏 + 表格卡片），其次降级到 fullClass
- */
-const findFullscreenContainer = (): HTMLElement | null => {
-  const headerEl = document.getElementById("fa-table-header");
-  if (headerEl) {
-    const card = headerEl.closest(`.${props.fullClass}`);
-    if (card?.parentElement) {
-      // 取父级 — 通常包裹了搜索栏 + 表格卡片
-      return card.parentElement as HTMLElement;
-    }
-    if (card) return card as HTMLElement;
-  }
-  return document.querySelector(`.${props.fullClass}`);
-};
-
-/**
  * 切换全屏状态
  * 进入全屏时会隐藏页面滚动条，退出时恢复原状态
  */
 const toggleFullScreen = () => {
-  const el = findFullscreenContainer();
+  const el = document.querySelector(`.${props.fullClass}`);
   if (!el) return;
 
   isFullScreen.value = !isFullScreen.value;
@@ -357,7 +340,7 @@ onUnmounted(() => {
   // 如果组件在全屏状态下被卸载，恢复页面滚动状态
   if (isFullScreen.value) {
     document.body.style.overflow = originalOverflow.value;
-    const el = findFullscreenContainer();
+    const el = document.querySelector(`.${props.fullClass}`);
     if (el) {
       el.classList.remove("el-full-screen");
     }

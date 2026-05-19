@@ -8,7 +8,7 @@
     <div class="overflow-auto h-full">
       <FaTable
         :data="products"
-        style="width: 100%"
+        :style="{ width: '100%' }"
         size="large"
         :border="false"
         :stripe="false"
@@ -48,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import { hexToRgb } from "@utils/ui";
+import { hexToRgb } from "@utils";
 
 interface Product {
   name: string;

@@ -1,45 +1,28 @@
-<!-- 分析页：业务图表模块 + 图表组件演示 -->
 <template>
   <div>
+    <!-- 业务分析模块 -->
     <ElRow :gutter="20">
-      <ElCol :xl="14" :lg="15" :xs="24">
-        <TodaySales />
-      </ElCol>
-      <ElCol :xl="10" :lg="9" :xs="24">
-        <VisitorInsights />
-      </ElCol>
+      <ElCol :xl="14" :lg="15" :xs="24"><TodaySales /></ElCol>
+      <ElCol :xl="10" :lg="9" :xs="24"><VisitorInsights /></ElCol>
     </ElRow>
 
     <ElRow :gutter="20">
-      <ElCol :xl="10" :lg="10" :xs="24">
-        <TotalRevenue />
-      </ElCol>
-      <ElCol :xl="7" :lg="7" :xs="24">
-        <CustomerSatisfaction />
-      </ElCol>
-      <ElCol :xl="7" :lg="7" :xs="24">
-        <TargetVsReality />
-      </ElCol>
+      <ElCol :xl="10" :lg="10" :xs="24"><TotalRevenue /></ElCol>
+      <ElCol :xl="7" :lg="7" :xs="24"><CustomerSatisfaction /></ElCol>
+      <ElCol :xl="7" :lg="7" :xs="24"><TargetVsReality /></ElCol>
     </ElRow>
 
     <ElRow :gutter="20">
-      <ElCol :xl="10" :lg="10" :xs="24">
-        <TopProducts />
-      </ElCol>
-      <ElCol :xl="7" :lg="7" :xs="24">
-        <SalesMappingByCountry />
-      </ElCol>
-      <ElCol :xl="7" :lg="7" :xs="24">
-        <VolumeServiceLevel />
-      </ElCol>
+      <ElCol :xl="10" :lg="10" :xs="24"><TopProducts /></ElCol>
+      <ElCol :xl="7" :lg="7" :xs="24"><SalesMappingByCountry /></ElCol>
+      <ElCol :xl="7" :lg="7" :xs="24"><VolumeServiceLevel /></ElCol>
     </ElRow>
 
+    <!-- 图表演示区 -->
     <ElRow :gutter="20">
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">柱状图（单数据）</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">柱状图（单数据）</span></div>
           <FaBarChart
             :data="singleBarData"
             :xAxisData="xAxisData"
@@ -50,9 +33,7 @@
       </ElCol>
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">柱状图（多组数据）</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">柱状图（多组数据）</span></div>
           <FaBarChart
             :data="multiBarData"
             :xAxisData="xAxisData"
@@ -63,9 +44,7 @@
       </ElCol>
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">柱状图（堆叠）</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">柱状图（堆叠）</span></div>
           <FaBarChart
             :data="stackBarData"
             :xAxisData="stackXAxisData"
@@ -77,9 +56,7 @@
       </ElCol>
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">折线图</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">折线图</span></div>
           <FaLineChart
             :data="[58, 15, 82, 35, 120, 62, 45]"
             :xAxisData="['一月', '二月', '三月', '四月', '五月', '六月', '七月']"
@@ -90,9 +67,7 @@
       </ElCol>
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">折线图（渐变背景）</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">折线图（渐变）</span></div>
           <FaLineChart
             :data="[28, 45, 82, 35, 100, 32, 55]"
             :xAxisData="['一月', '二月', '三月', '四月', '五月', '六月', '七月']"
@@ -102,9 +77,7 @@
       </ElCol>
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">折线图（多组数据）</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">折线图（多组）</span></div>
           <FaLineChart
             :data="multiLineData"
             :xAxisData="['1月', '2月', '3月', '4月', '5月', '6月']"
@@ -112,12 +85,9 @@
           />
         </div>
       </ElCol>
-
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">柱状图（水平）</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">柱状图（水平）</span></div>
           <FaHBarChart
             :data="[50, 80, 120, 90, 60]"
             :xAxisData="['产品A', '产品B', '产品C', '产品D', '产品E']"
@@ -126,10 +96,7 @@
       </ElCol>
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">柱状图（水平）</span>
-          </div>
-
+          <div class="pb-3.5"><span class="text-base font-medium">柱状图（水平多组）</span></div>
           <FaHBarChart
             :data="[
               { name: '系列1', data: [10, 20, 30] },
@@ -143,9 +110,7 @@
       </ElCol>
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">柱状图（水平堆叠）</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">柱状图（水平堆叠）</span></div>
           <FaHBarChart
             :data="[
               { name: '系列1', data: [10, 20, 30] },
@@ -158,12 +123,9 @@
           />
         </div>
       </ElCol>
-
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">环形图</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">环形图</span></div>
           <FaRingChart
             :data="[
               { value: 35, name: '分类A' },
@@ -175,12 +137,9 @@
           />
         </div>
       </ElCol>
-
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">环形图</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">环形图（中心文字）</span></div>
           <FaRingChart
             :data="[
               { value: 35, name: '分类A' },
@@ -191,7 +150,6 @@
               { value: 37, name: '分类F' },
             ]"
             :radius="['54%', '70%']"
-            :borderRadius="0"
             :showLegend="true"
             legendPosition="bottom"
             centerText="¥300,458"
@@ -200,9 +158,7 @@
       </ElCol>
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">饼图</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">饼图</span></div>
           <FaRingChart
             :data="[
               { value: 30, name: '分类A' },
@@ -217,9 +173,7 @@
       </ElCol>
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">散点图</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">散点图</span></div>
           <FaScatterChart
             :data="[
               { value: [1, 3] },
@@ -238,12 +192,9 @@
           />
         </div>
       </ElCol>
-
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">雷达图</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">雷达图</span></div>
           <FaRadarChart
             :indicator="[
               { name: '销售', max: 100 },
@@ -253,23 +204,15 @@
               { name: '开发', max: 100 },
             ]"
             :data="[
-              {
-                name: '预算分配',
-                value: [80, 70, 90, 85, 75],
-              },
-              {
-                name: '实际开销',
-                value: [70, 75, 85, 80, 70],
-              },
+              { name: '预算分配', value: [80, 70, 90, 85, 75] },
+              { name: '实际开销', value: [70, 75, 85, 80, 70] },
             ]"
           />
         </div>
       </ElCol>
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">k线图</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">K线图</span></div>
           <FaKLineChart
             :data="[
               { time: '2024-01-01', open: 20, close: 23, high: 25, low: 18 },
@@ -284,9 +227,7 @@
       </ElCol>
       <ElCol :xs="24" :md="12" :lg="8" class="mb-5">
         <div class="fa-card">
-          <div class="pb-3.5">
-            <span class="text-base font-medium">双向堆叠柱状图</span>
-          </div>
+          <div class="pb-3.5"><span class="text-base font-medium">双向堆叠柱状图</span></div>
           <FaDualBarCompareChart
             :positiveData="[50, 28, 80, 65, 68, 70, 60, 55]"
             :negativeData="[50, 28, 40, 45, 38, 50, 42, 48]"
@@ -307,6 +248,7 @@
       </ElCol>
     </ElRow>
 
+    <!-- 地图 -->
     <div class="page-content" element-loading-text="加载中...">
       <FaMapChart />
     </div>
@@ -315,6 +257,8 @@
 
 <script setup lang="ts">
 import type { LineDataItem } from "@/types/component/chart";
+import { ref } from "vue";
+
 import TodaySales from "./modules/today-sales.vue";
 import VisitorInsights from "./modules/visitor-insights.vue";
 import TotalRevenue from "./modules/total-revenue.vue";
@@ -323,56 +267,45 @@ import TargetVsReality from "./modules/target-vs-reality.vue";
 import TopProducts from "./modules/top-products.vue";
 import SalesMappingByCountry from "./modules/sales-mapping-by-country.vue";
 import VolumeServiceLevel from "./modules/volume-service-level.vue";
-import { defineAsyncComponent } from "vue";
 
 defineOptions({ name: "Analysis" });
 
-/**
- * 异步加载地图组件
- * 减少初始加载体积
- */
 const FaMapChart = defineAsyncComponent(() => import("@/components/charts/fa-map-chart/index.vue"));
 
-/**
- * 多组数据折线图示例数据
- */
+// === 图表演示数据 ===
 const multiLineData: LineDataItem[] = [
   {
     name: "销售额",
     data: [120, 132, 101, 134, 90, 130],
-    areaStyle: {
-      startOpacity: 0.1,
-      endOpacity: 0,
-    },
+    areaStyle: { startOpacity: 0.1, endOpacity: 0 },
   },
   {
     name: "利润",
     data: [80, 92, 71, 94, 60, 80],
-    areaStyle: {
-      startOpacity: 0.1,
-      endOpacity: 0,
-    },
+    areaStyle: { startOpacity: 0.1, endOpacity: 0 },
   },
 ];
-
 const singleBarData = ref([120, 200, 150, 80, 70, 110, 130]);
 const xAxisData = ref(["周一", "周二", "周三", "周四", "周五", "周六", "周日"]);
-
 const multiBarData = ref([
   { name: "销售额", data: [120, 200, 150, 80, 70, 110, 130] },
   { name: "利润", data: [20, 50, 30, 15, 10, 25, 35] },
 ]);
-
 const stackBarData = ref([
   { name: "Q1", data: [20, 25, 30, 35, 40], stack: "total" },
   { name: "Q2", data: [30, 35, 40, 45, 50], stack: "total" },
 ]);
-
 const stackXAxisData = ref(["产品A", "产品B", "产品C", "产品D", "产品E"]);
 </script>
 
 <style scoped>
 @reference "@styles/core/tailwind.css";
+
+:deep(.el-card) {
+  --el-card-border-radius: calc(var(--custom-radius) + 2px);
+
+  border: 1px solid var(--fa-card-border);
+}
 
 .page-title {
   @apply my-5 text-xl font-medium first:mt-0;
@@ -380,5 +313,12 @@ const stackXAxisData = ref(["产品A", "产品B", "产品C", "产品D", "产品E
 
 .fa-card {
   @apply p-5;
+}
+
+.console-cards-showcase {
+  padding: 16px;
+  background: var(--el-bg-color);
+  border: 1px solid var(--el-border-color-lighter);
+  border-radius: var(--el-border-radius-base);
 }
 </style>

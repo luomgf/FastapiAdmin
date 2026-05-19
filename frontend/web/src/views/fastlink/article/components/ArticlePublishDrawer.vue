@@ -51,10 +51,10 @@
                       v-if="!cover"
                       class="flex-cc flex-col w-65 h-40 border border-dashed border-[#d9d9d9] rounded-md"
                     >
-                      <ElIcon class="!text-xl !text-g-600"><Plus /></ElIcon>
+                      <ElIcon class="text-xl! text-g-600!"><Plus /></ElIcon>
                       <div class="mt-2 text-sm text-g-600">点击上传封面</div>
                     </div>
-                    <img v-else :src="cover" class="block w-65 h-40 object-cover" />
+                    <img v-else :src="cover" class="block w-65 h-40 object-cover" loading="eager" />
                   </ElUpload>
                   <div class="mt-2 text-xs text-g-700">建议尺寸 16:9，jpg/png 格式</div>
                 </div>
@@ -122,9 +122,8 @@
 
 <script setup lang="ts">
 import { Plus } from "@element-plus/icons-vue";
-import { ApiStatus } from "@utils/http";
-import { useUserStore } from "@stores/modules/user.store";
-import { EmojiText } from "@utils/ui";
+import { ApiStatus, EmojiText } from "@utils";
+import { useUserStore } from "@stores";
 import { PageModeEnum } from "@/enums/formEnum";
 import axios from "axios";
 

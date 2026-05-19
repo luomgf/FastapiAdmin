@@ -12,7 +12,7 @@
           <slot>
             <ElInput
               class="reference"
-              style="width: 100%"
+              :style="'width: 100%'"
               :model-value="text"
               :readonly="true"
               :placeholder="placeholder"
@@ -125,6 +125,7 @@
         </ElTable>
         <!-- 分页 -->
         <FaPagination
+          class="mt-2"
           v-model:total="total"
           v-model:page="queryParams.page_no"
           v-model:limit="queryParams.page_size"
@@ -134,7 +135,7 @@
           <ElButton type="primary" size="small" @click="handleConfirm">
             {{ confirmText }}
           </ElButton>
-          <ElButton size="small" @click="handleClear">清 空</ElButton>
+          <ElButton type="danger" size="small" @click="handleClear">清 空</ElButton>
           <ElButton size="small" @click="handleClose">关 闭</ElButton>
         </div>
       </div>
@@ -153,7 +154,7 @@ defineSlots<{
 import { ref, reactive, computed } from "vue";
 import { useResizeObserver } from "@vueuse/core";
 import type { FormInstance, PopoverProps, TableInstance } from "element-plus";
-import FaPagination from "@/components/others/fa-pagination/index.vue";
+import { ElMessage } from "element-plus";
 
 // 对象类型
 export type IObject = Record<string, any>;
@@ -351,6 +352,8 @@ const popoverContentRef = ref();
 </script>
 
 <style scoped lang="scss">
+@use "@styles/fa-table";
+
 .reference :deep(.el-input__wrapper),
 .reference :deep(.el-input__inner) {
   cursor: pointer;

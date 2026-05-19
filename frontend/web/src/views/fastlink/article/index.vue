@@ -1,6 +1,6 @@
 <!-- 文章列表（挂载于 /dashboard/article，原 widgets/article） -->
 <template>
-  <div class="page-content !mb-5">
+  <div class="page-content mb-5!">
     <ElRow justify="space-between" :gutter="10">
       <ElCol :lg="6" :md="6" :sm="14" :xs="16">
         <ElInput
@@ -21,7 +21,7 @@
         :md="6"
         :sm="10"
         :xs="6"
-        style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: end"
+        :style="'display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: end'"
       >
         <ElButton @click="commentWallOpen = true">
           <FaSvgIcon icon="ri:message-3-line" class="mr-1" />
@@ -41,7 +41,7 @@
           :key="item.id"
           @click="toDetail(item)"
         >
-          <div class="relative aspect-[16/9.5]">
+          <div class="relative aspect-16/9.5">
             <ElImage
               class="flex align-center justify-center w-full h-full object-cover bg-gray-200"
               :src="item.home_img"
@@ -77,11 +77,11 @@
       </div>
     </div>
 
-    <div style="margin-top: 16vh" v-if="showEmpty">
+    <div :style="'margin-top: 16vh'" v-if="showEmpty">
       <ElEmpty :description="`未找到相关数据 ${EmojiText[0]}`" />
     </div>
 
-    <div style="display: flex; justify-content: center; margin-top: 20px">
+    <div :style="'display: flex; justify-content: center; margin-top: 20px'">
       <ElPagination
         size="default"
         background
@@ -118,7 +118,7 @@ import ArticleCommentWallDrawer from "./components/ArticleCommentWallDrawer.vue"
 import ArticleDetailDrawer from "./components/ArticleDetailDrawer.vue";
 import ArticlePublishDrawer from "./components/ArticlePublishDrawer.vue";
 import { useDateFormat } from "@vueuse/core";
-import { EmojiText } from "@utils/ui";
+import { EmojiText } from "@utils";
 import { ArticleList } from "@/mock/temp/articleList";
 import { useCommon } from "@/hooks/core/useCommon";
 
